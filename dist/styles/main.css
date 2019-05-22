@@ -1,0 +1,17 @@
+#field {
+  width: 200px;
+  height: 150px;
+  border: 10px groove black;
+  background-color: #0f0;
+  position: relative;
+  overflow: hidden;
+  cursor: default; }
+
+#ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transition: top 1s, left 1s;
+  transition: top 1s, left 1s; }
+
+/*# sourceMappingURL=main.css.map */
