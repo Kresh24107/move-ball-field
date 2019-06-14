@@ -2,31 +2,31 @@
 
 const field = document.getElementById('field');
 const ball = document.getElementById('ball');
-const minTop = 0;
-const minLeft = 0;
-const maxTop = field.clientHeight - ball.clientHeight;
-const maxLeft = field.clientWidth - ball.clientWidth;
+const minTopPosition = 0;
+const minLeftPosition = 0;
+const maxTopPosition = field.clientHeight - ball.clientHeight;
+const maxLeftPosition = field.clientWidth - ball.clientWidth;
 
-field.onclick = function(e) {
-  const evt = field.event || e;
-  let leftP = evt.clientX - field.offsetLeft
-  - field.clientLeft - (ball.clientWidth / 2);
-  let topP = evt.clientY - field.offsetTop
-  - field.clientTop - (ball.clientHeight / 2);
+field.onclick = function() {
+  const checkedEvent = field.event || event;
+  let leftPosition = checkedEvent.clientX - field.offsetLeft
+    - field.clientLeft - (ball.clientWidth / 2);
+  let topPosition = checkedEvent.clientY - field.offsetTop
+    - field.clientTop - (ball.clientHeight / 2);
 
-  if (leftP < minLeft) {
-    leftP = minLeft;
+  if (leftPosition < minLeftPosition) {
+    leftPosition = minLeftPosition;
   }
-  if (leftP > maxLeft) {
-    leftP = maxLeft;
+  if (leftPosition > maxLeftPosition) {
+    leftPosition = maxLeftPosition;
   }
-  ball.style.left = leftP + 'px';
+  ball.style.left = leftPosition + 'px';
 
-  if (topP < minTop) {
-    topP = minTop;
+  if (topPosition < minTopPosition) {
+    topPosition = minTopPosition;
   }
-  if (topP > maxTop) {
-    topP = maxTop;
+  if (topPosition > maxTopPosition) {
+    topPosition = maxTopPosition;
   }
-  ball.style.top = topP + 'px';
+  ball.style.top = topPosition + 'px';
 };
